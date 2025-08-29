@@ -22,6 +22,8 @@ GO/
 │ ├── go.sum
 │ ├── main.go
 │ └── README.md # описание проекта
+├── Project2/ # следующий проект
+├── Project3/ # ...
 └── README.md # общее описание
 
 ---
