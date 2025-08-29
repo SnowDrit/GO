@@ -1,0 +1,72 @@
+basePath: /
+definitions:
+  main.About:
+    properties:
+      class:
+        type: integer
+        x-order: "5"
+      first_name:
+        type: string
+        x-order: "2"
+      hobbies:
+        items:
+          type: string
+        type: array
+        x-order: "6"
+      last_name:
+        type: string
+        x-order: "1"
+      middle_name:
+        type: string
+        x-order: "3"
+      university:
+        type: string
+        x-order: "4"
+    type: object
+  main.Why:
+    properties:
+      fromCPlus:
+        type: string
+      fromPython:
+        type: string
+      universal:
+        type: string
+    type: object
+host: localhost:8080
+info:
+  contact: {}
+  description: 'Учебный проект: API с информацией обо мне и о причинах изучения Go.'
+  title: MyServer API
+  version: "1.0"
+paths:
+  /api/about-me:
+    get:
+      consumes:
+      - application/json
+      description: Возвращает данные о студенте (JSON или HTML)
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/main.About'
+      summary: Информация обо мне
+      tags:
+      - about-me
+  /api/why-go:
+    get:
+      consumes:
+      - application/json
+      description: Мотивация изучения Go
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/main.Why'
+      summary: Почему Go
+      tags:
+      - why-go
+swagger: "2.0"

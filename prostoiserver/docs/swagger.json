@@ -1,0 +1,107 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "Учебный проект: API с информацией обо мне и о причинах изучения Go.",
+        "title": "MyServer API",
+        "contact": {},
+        "version": "1.0"
+    },
+    "host": "localhost:8080",
+    "basePath": "/",
+    "paths": {
+        "/api/about-me": {
+            "get": {
+                "description": "Возвращает данные о студенте (JSON или HTML)",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "about-me"
+                ],
+                "summary": "Информация обо мне",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/main.About"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/why-go": {
+            "get": {
+                "description": "Мотивация изучения Go",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "why-go"
+                ],
+                "summary": "Почему Go",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/main.Why"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "main.About": {
+            "type": "object",
+            "properties": {
+                "last_name": {
+                    "type": "string",
+                    "x-order": "1"
+                },
+                "first_name": {
+                    "type": "string",
+                    "x-order": "2"
+                },
+                "middle_name": {
+                    "type": "string",
+                    "x-order": "3"
+                },
+                "university": {
+                    "type": "string",
+                    "x-order": "4"
+                },
+                "class": {
+                    "type": "integer",
+                    "x-order": "5"
+                },
+                "hobbies": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "x-order": "6"
+                }
+            }
+        },
+        "main.Why": {
+            "type": "object",
+            "properties": {
+                "fromCPlus": {
+                    "type": "string"
+                },
+                "fromPython": {
+                    "type": "string"
+                },
+                "universal": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
