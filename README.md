@@ -10,24 +10,40 @@
 1. [prostoiserver](./prostoiserver)  
    Простой веб-сервер с автогенерацией Swagger-документации.  
 
-*(новые проекты будут добавляться сюда)*
+2. [game](./game)  
+   Консольная текстовая игра с двумя версиями: с тестами и без тестов.  
 
 ---
 
 ## 📂 Структура репозитория
 ```
 GO/
-├── prostoiserver/ # первый проект
-│ ├── docs/ # swagger-доки
+├── prostoiserver/
+│ ├── docs/
 │ ├── go.mod
 │ ├── go.sum
 │ ├── main.go
-│ └── README.md # описание проекта
-├── Project2/ # следующий проект
-├── Project3/ # ...
-└── README.md # общее описание
+│ └── README.md
+├── game/
+│ ├── game_without_test/
+│ │ ├── game/
+│ │ │ ├── command.go
+│ │ │ ├── game.go
+│ │ │ ├── items.go
+│ │ │ ├── player.go
+│ │ │ ├── room.go
+│ │ │ └── go.mod
+│ │ └── main/
+│ │ ├── main.go
+│ │ └── go.mod
+│ ├── game_with_test/
+│ │ ├── game/
+│ │ │ ├── main.go
+│ │ │ ├── main_test.go
+│ │ │ └── go.mod
+│ └── README.md
+└── README.md
 ```
-
 
 ---
 
